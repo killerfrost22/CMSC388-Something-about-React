@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		main();
+
+		function main() {
+			for (let i = 1; i <= 4; i++) {
+				document.writeln(i + "<br>");
+			}
+			 document.writeln("Value if i: " + i);  //Generates ReferenceError
+			evaluate(200);
+		}
+
+		function evaluate(x) {
+			if (x >= 100) {
+				let y = x * 100;
+				document.writeln("Value in if: " + y);
+			}
+			//return y; // undefined (see console)
+		}
+	</script>
+</body>
+
+</html>

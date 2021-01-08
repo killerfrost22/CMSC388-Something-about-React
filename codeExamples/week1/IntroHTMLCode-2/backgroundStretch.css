@@ -1,0 +1,10 @@
+body {
+	background: url(c3.jpg);
+	background-repeat: no-repeat;
+	/* try repeat-x, repeat-y, no-repeat, repeat */
+
+	background-size: cover;
+	background-position: center; /* try left right */
+}
+
+/* try without the following rule */

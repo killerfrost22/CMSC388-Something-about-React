@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+	"use strict";
+        
+	main();
+	
+	function main() {
+		document.writeln("Value: " + evaluate(200));
+    }
+	function evaluate(x) {
+		document.writeln("Value of y: " + y + "<br>"); // undefined but does not throw an error
+
+		if (x >= 100) {
+            var y = x * 100;
+        }
+		return y;  // accessible
+    }
+	</script>
+</body>
+</html>

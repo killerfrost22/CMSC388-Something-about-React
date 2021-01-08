@@ -1,0 +1,19 @@
+body {
+
+	/* background properties */
+	background-color: silver;
+	/* background-image: url(campusBldg.jpg); */
+	background-image: url(Coco.jpg);
+
+	background-repeat: repeat-x repeat-y;
+	/* try repeat-x, repeat-y, no-repeat, repeat */
+
+	background-attachment: scroll;
+	/* try scroll, fixed */
+
+	background-size: 10cm;
+
+	/* shorthand version for above background properties */
+	/* DISABLED background: silver url(Coco.jpg) repeat-y fixed center; */
+
+}

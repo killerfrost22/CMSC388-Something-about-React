@@ -1,0 +1,15 @@
+article {
+    color: orchid;
+    /* inherited */
+    border: medium solid;
+    /* not inherited */
+}
+
+h2 {
+    color: forestgreen;
+}
+
+article h2 {
+    color: inherit;
+    /* h2 inside article will be orchid color (not forestgreen)*/
+}

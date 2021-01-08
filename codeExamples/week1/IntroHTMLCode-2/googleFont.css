@@ -1,0 +1,17 @@
+
+#para1 {
+	font-family: Chilanka;
+	background-color: gray;
+	color: yellow;
+	border: 5px dashed red;
+	margin:.5em;
+	padding:.5em;
+}
+
+#para2 {
+	font-family: Ubuntu;
+	border: 1em ridge red;
+	margin:.5em;
+	padding:.5em;
+}
+

@@ -1,0 +1,100 @@
+/* This is a comment in CSS */
+/* The next line tell us the font to look for.  The last line is a generic
+/* font family (serif, sans-serif, monospace)*/
+
+body {
+    font-family: arial, Helvetica, "Times New Roman", sans-serif; 
+    /* background: #F5F5DC; */
+    background: rgba(125, 125, 125, 0.5);
+    color: teal;
+    font-size: 90%;	/* try different percentages */					  
+}
+
+a:link {
+	color: blue;	
+}
+
+a:visited {
+	color:purple;
+}
+
+a:hover {
+	color: red;
+}
+
+a:active {
+	color: gray;
+}
+
+h1 {
+	color: gray;
+}
+
+
+pre {
+	color: gray;
+	font-style: italic;
+	text-align: center;
+}
+
+pre:hover {
+	font-size: 2em;
+}
+
+strong {
+	color: red;
+}
+
+ol {
+	list-style-type: lower-latin; /* try lower-roman, upper-roman, upper-latin */
+}
+
+ul {
+	color: maroon;
+	list-style-image: url(bus.gif); 
+	/* list-style-type: circle;  /* try disc, square, none */
+}
+
+table {
+	background-color: black;   /* try commenting this out */
+	border-collapse: separate; /* try collapse */
+	border-style: double; /* try solid, dashed, groove, ridge, inset, outset */ 
+	border-color: red;
+	border-width: .125em;
+	text-align: center; /* try left, right */
+}
+
+th {
+	background-color: #F5DEB3;
+	padding: 8px;
+}
+
+td {
+	background-color: white;
+}
+
+/* class selector */
+.styleOne {
+	color: red;
+	font-style: italic;
+	text-align: center;	
+}
+
+/* class selector */
+.styleTwo {
+	color: gray;
+	font-style: oblique;
+	text-align: center;	
+}
+
+.styleThree {
+	color: blue;
+	background-color: white;
+}
+
+/* id selector */
+#additionalInfo {
+	color: green;
+	font-weight: bold; /* try normal, bolder, 100, 200, 300, 400 (normal)..., 700 (bold), 900*/ 
+	text-align: center;	
+}

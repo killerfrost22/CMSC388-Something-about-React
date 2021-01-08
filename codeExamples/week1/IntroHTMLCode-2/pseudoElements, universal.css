@@ -1,0 +1,30 @@
+body {
+	font-family: sans-serif;
+	/* notice, using serif */
+}
+
+* {
+	color: teal;
+}
+
+div.xxx.yyy {
+	color: blue;
+	font-size: 20px;
+}
+
+p * {
+	/* note that only descendants (not p itself) are affected by this style */
+	color: peachpuff;
+}
+
+/* Try first-line as well */
+p:first-letter {
+	font-weight: bold;
+	font-size: 4rem;
+	/* try with em */
+}
+
+p:first-line {
+	font-weight: 400;
+	font-size: 2em;
+}

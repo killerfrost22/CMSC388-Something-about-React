@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Input/Output</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		document.writeln("<strong>" + "Bill Calculation System</strong><br />");
+
+		var costPerCredit, numberOfCredits, tuitionCost;
+
+		/* Reading values from the user */
+		costPerCredit = Number(prompt("Enter cost per credit:"));
+		numberOfCredits = prompt("Enter number of credits:");
+
+		/* Computing cost */
+		tuitionCost = costPerCredit * numberOfCredits;
+
+		document.writeln("<strong>Tuition Cost: </strong>" + tuitionCost);
+	</script>
+</body>
+
+</html>
+

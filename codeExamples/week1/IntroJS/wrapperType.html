@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Wrapper object type example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		var name = "Testudo";
+		var objName = new String("Testudo");
+
+		if (name == objName) {
+			document.writeln('Same value');
+		} else {
+			document.writeln('Different value');
+		}
+
+		document.writeln("<br>")
+
+		if (name === objName) {
+			document.writeln('Same type!');
+		} else {
+			document.writeln('Different type');
+		}
+	</script>
+</body>
+
+</html>

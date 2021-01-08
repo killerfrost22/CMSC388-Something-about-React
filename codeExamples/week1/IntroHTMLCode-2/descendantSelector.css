@@ -1,0 +1,15 @@
+body {
+    font-family: arial, sans-serif;
+}
+
+a {
+    font-size: 2em;
+    color: green;
+}
+
+/* When a found in li override previous a definition */
+li a {
+    font-size: 4em;
+    font-style: italic;
+    color: red;
+}
