@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		main();
+
+		function getLetter(name, body, signature) {
+			let letter = `<br>Dear ${name}<br><br>`;
+
+			letter += body + "<br><br>";
+			letter += `Sincerely<br><br><br><br>${signature}`;
+
+			return letter;
+		}
+
+		function sum(x, y) {
+			return x + y;
+		}
+
+		function main() {
+			let mascot = "turtle";
+			let message = `Fear the ${mascot}`;
+			document.writeln(message);
+
+			document.writeln(getLetter("Mary", "How are you doing?", "Peter"));
+			let x = 20,
+				y = 30;
+			let totalCost = `<br>Total Cost is ${x * y}`;
+			document.writeln(totalCost);
+			let sumResult = `<br>Sum is ${sum(x, y)}`;
+			document.writeln(sumResult);
+
+			const string = `Hello
+     terps!`;
+			document.writeln("<pre>");
+			document.writeln(string);
+			document.writeln("</pre>");
+
+		}
+	</script>
+</body>
+
+</html>

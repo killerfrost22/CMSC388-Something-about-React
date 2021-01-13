@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		let prod2 = x => x * 2;
+
+		let sum = (x, y, z) => x + y + z;
+		let initialValue = () => 1000;
+
+		let formatted = x => {
+			x++;
+			return `Value: ${x}`;
+		}
+
+		document.writeln(prod2(10) + "<br>");
+		document.writeln(sum(10, 2, 4) + "<br>");
+		document.writeln(initialValue() + "<br>");
+		document.writeln(formatted(5) + "<br>")
+
+		let scores = [10, 1, 44, 200];
+		let sortedAttempt1 = scores.sort();
+		document.writeln("sortedAttempt1: " + sortedAttempt1 + "<br>");
+		let sortedAttempt2 = scores.sort((a, b) => a - b);
+		document.writeln("sortedAttempt2: " + sortedAttempt2 + "<br>");
+	</script>
+</body>
+
+</html>

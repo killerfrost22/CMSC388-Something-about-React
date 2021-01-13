@@ -1,0 +1,33 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+		
+        function InvalidDataError(message) {
+            this.name = "InvalidDataError";
+            this.message = message;
+        }
+        InvalidDataError.prototype = new Error();
+        
+        main();
+        
+        function main() {
+            try {
+                var value = Number(prompt("Enter positive (or 0) value"));
+                if (value < 0) {
+                    throw new InvalidDataError("positive value expected");
+                } else {
+                    alert("Square Root: " + Math.sqrt(value));
+                }
+            } catch(error) {
+                alert(error.message);
+            }
+        }
+	</script>
+</body>
+</html>

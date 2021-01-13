@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Variable Hoisting Example</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        // initialization won't be hoisted!
+        document.writeln("<em style='font-size: 3em'>" + x + "</em><br>");
+
+        x = 389;
+        document.writeln("<em style='font-size: 3em'>" + x + "</em><br>");
+
+        // enabling this line will throw an error. Hosting does not work for "let"
+        // document.writeln("<em style='font-size: 3em'>" + y + "</em><br>");
+
+        var x = "389n";
+        let y = 983;
+
+        document.writeln("<em style='font-size: 3em'>" + y + "</em><br>");
+    </script>
+</body>
+
+</html>

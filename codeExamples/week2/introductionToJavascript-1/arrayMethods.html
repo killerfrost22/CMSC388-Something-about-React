@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Array Methods</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		main();
+
+		function printArray(data) {
+			var i;
+
+			for (i = 0; i < data.length; i++) {
+				document.writeln(data[i] + " ");
+			}
+			document.writeln("<br>");
+		}
+
+		function main() {
+			var languages = ["JavaScript", "Java", "PHP", "Python"];
+			document.writeln(languages + "<br>")
+			document.writeln("Length: " + languages.length + "<br>");
+			document.writeln("<br>");
+
+			languages.push("C");
+			document.writeln("After pushing element<br>");
+			printArray(languages);
+
+			var retrieved = languages.pop();
+			document.writeln("Popped element: " + retrieved + "<br>");
+			document.writeln("After popping element<br>");
+			printArray(languages);
+			document.writeln("<br>");
+
+			var retrieved = languages.shift();
+			document.writeln("Shifted element: " + retrieved + "<br>");
+			document.writeln("After shifting<br>");
+			printArray(languages);
+
+			document.writeln("After unshifting<br>");
+			languages.unshift(retrieved);
+			printArray(languages);
+			document.writeln("<br>");
+
+			document.writeln("Finding index of \"Python\": ");
+			document.writeln(languages.indexOf("Python") + "<br>");
+			document.writeln("Finding index of \"C\": ");
+			document.writeln(languages.indexOf("C") + "<br>");
+			document.writeln("<br>");
+
+			document.writeln("Before removing elements with splice<br>");
+			printArray(languages);
+			// returns removed elements array
+			var removedElements = languages.splice(1, 2);
+			document.writeln("After removing elements with splice<br>");
+			printArray(languages);
+			document.writeln("Elements removed<br>");
+			printArray(removedElements);
+			document.writeln("<br>");
+
+			languages.splice(1, 0, "Go", "C++", "Ruby");
+			document.writeln("After adding 3 elements with splice<br>");
+			printArray(languages);
+			document.writeln("<br>");
+			document.writeln("slice example<br>");
+			var shallowCopy = languages.slice();
+			document.writeln("Shallow copy<br>");
+			printArray(shallowCopy);
+			shallowCopy[1] = "Perl";			
+			printArray(shallowCopy);
+			printArray(languages); // String is primitives.
+			document.writeln("<br>");
+
+			var seasons = ["Fall", "Winter", "Spring", "Summer"];
+			seasons.reverse();
+			document.writeln("After reversing array<br>");
+			printArray(seasons);
+			document.writeln("<br>");
+
+			var part1 = [10, 20, 30];
+			var part2 = [40, 50, 60];
+			var part3 = part1.concat(part2);
+			document.writeln("After concatenating<br>");
+			printArray(part3);
+			document.writeln("<br>");
+
+			document.writeln("After fill<br>");
+			var filled = new Array(4).fill(100);
+			printArray(filled);
+			document.writeln("<br>");
+
+			document.writeln("Devices<br>");
+			var devices = ["Computer", "Clock", "Generator"];
+			devices[7] = "Phone";
+			devices.forEach(function (elem, index) {
+				document.writeln("Index: " + index + ", Elem: " + elem + "<br>");
+			});
+		}
+	</script>
+</body>
+
+</html>

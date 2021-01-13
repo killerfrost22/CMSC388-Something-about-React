@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+		
+		let doctor = {
+			printSpecialty: function() {
+                document.writeln("heart<br>");
+            },
+			
+			/* not using function */
+			printDailySchedule(patients, minutes) {
+				document.writeln("Total time: " + patients * minutes + "<br>");
+			}
+		}
+		
+		doctor.printSpecialty();
+		doctor.printDailySchedule(10, 20);
+		
+	</script>
+</body>
+
+</html>

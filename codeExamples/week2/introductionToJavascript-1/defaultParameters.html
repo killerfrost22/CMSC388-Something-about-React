@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		main();
+
+		function main() {
+			task();
+			task("Rose");
+			task(25);
+			task("Kelly", 30, 20000);
+			taskOld();
+
+			document.writeln(greet('Hello', 'Chris'));
+		}
+
+		function task(name = "John", age = 21, salary = special()) {
+			document.writeln(name + ' ' + age + ' ' + salary + "<br>");
+		}
+
+		function taskOld(name, age) {
+			name = name || "John";
+			age = age || 21;
+			document.writeln("Old approach: " + name + ' ' + age + "<br>");
+		}
+
+		function special() {
+			return 10000;
+		}
+
+		// Parameters defined beforehand (to the left) are available to later
+		// default parameters
+		function greet(name, greeting, message = greeting + ' ' + name) {
+			return [name, greeting, message];
+		}
+	</script>
+</body>
+
+</html>

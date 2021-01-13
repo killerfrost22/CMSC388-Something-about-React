@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>JS Set Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		/* Notice the use of const instead of let */
+		const mySet = new Set();
+		const student1 = {
+			name: "Mike",
+			id: 10
+		};
+		const student2 = {
+			name: "Rose",
+			id: 20
+		};
+		mySet.add(150);
+		mySet.add(student1).add(student2); /* add is chainable */
+
+		document.writeln("150 part of the set? " + mySet.has(150) + "<br>");
+		document.writeln("Set size: " + mySet.size + "<br>");
+		document.writeln("Set Entries<br>");
+		for (let entry of mySet) {
+			document.writeln(entry + "<br>");
+		}
+
+		document.writeln("<br>After deleting an entry<br>");
+		mySet.delete(student1);
+		for (let entry of mySet) {
+			document.writeln(entry + "<br>");
+		}
+
+		document.writeln("<br>After clearing the set<br>");
+		mySet.clear();
+		for (let entry of mySet) {
+			document.writeln(entry + "<br>");
+		}
+
+		document.writeln("<br>Set based on array<br>");
+		let arr = ["C", "JavaScript", "Pascal"];
+		document.writeln(arr + "<br>");
+
+		let setFromArray = new Set(arr);
+
+		document.writeln("<ul>");
+		let iter = setFromArray.values();
+		for (let e of iter) {
+			document.writeln("<li>" + e + "</li>")
+		}
+		document.writeln("</ul>");
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Functions as Data</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+		main();
+
+		function main() {
+			var sayHi = hello;
+			var hi = hello;
+			hi("John");
+			hello("John");
+			sayHi("John");
+		}
+
+		function hello(name) {
+			document.writeln(name + "<br />");
+		}
+	</script>
+</body>
+
+</html>

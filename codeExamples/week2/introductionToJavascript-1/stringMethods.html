@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>String Methods</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		main();
+
+		function main() {
+			var str1 = prompt("Enter string value");
+			var str2 = prompt("Enter string value"),
+				result;
+
+			/* string comparison */
+			if (str1 < str2) {
+				document.writeln(str1 + " < " + str2);
+			} else if (str1 > str2) {
+				document.writeln(str1 + " > " + str2);
+			} else {
+				document.writeln("str1 equal to str2");
+			}
+
+			if (str1.includes(str2)) {
+				document.writeln("<br>" + str1 + " includes " + str2);
+			} else {
+				document.writeln("<br>" + str1 + " does not include " + str2);
+			}
+
+			if (str1.startsWith("the")) {
+				document.writeln("<br>" + str1 + " starts with \"the\"");
+			} else {
+				document.writeln("<br>" + str1 + " does not start with \"the\"");
+			}
+
+			if (str1.endsWith("ing")) {
+				document.writeln("<br>" + str1 + " ends with \"ing\"");
+			} else {
+				document.writeln("<br>" + str1 + " does not end with \"ing\"");
+			}
+
+			document.writeln("<br>\"Fear the turtle\".indexOf(\"the\")&rarr;" +
+				"Fear the turtle".indexOf("the"));
+			document.writeln("<br>\"Fear the turtle\".indexOf(\"boat\")&rarr;" +
+				"Fear the turtle".indexOf("boat"));
+			document.writeln("<br>\"Fear the turtle\".indexOf(\"\")&rarr;" + "Fear the turtle"
+				.indexOf(""));
+			document.writeln("<br>\"Fear the turtle\".lastIndexOf(\"e\")&rarr;" +
+				"Fear the turtle".lastIndexOf("e"));
+
+			document.writeln("<br>" + str1 + ".repeat(5)&rarr;" + str1.repeat(5));
+			document.writeln("<br>" + "\"Feartheturtle\".slice(2, 7) " + "Feartheturtle".slice(
+				2, 7));
+			document.writeln("<br>" + "\"Feartheturtle\".slice(-7) " + "Feartheturtle".slice(-7));
+
+			str1 = prompt("Enter comma separated string");
+			var strArray = str1.split(","),
+				i;
+			document.writeln("String components:<br>")
+			for (i = 0; i < strArray.length; i++) {
+				document.writeln(strArray[i] + " Length: " + strArray[i].length + "<br>");
+			}
+		}
+	</script>
+</body>
+
+</html>

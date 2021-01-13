@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		main();
+		
+		function main() {
+			// Generic dessert
+			var dessert = {
+				minimumCalories: 100,
+				displayDessert: function() {
+					document.writeln(this.name + ", " + this.calories + "<br>");
+				}
+			};
+
+			document.writeln("<h2>dessert Properties</h2>");
+			document.writeln("toString: " + dessert.toString() + "<br>");
+			var propertiesArray = getAllProperties(dessert);
+			for (var i = 0; i < propertiesArray.length; i++) {
+				document.writeln(propertiesArray[i] + "<br>");
+			}
+			if (Object.prototype.isPrototypeOf(dessert)) {
+                document.writeln("Object.prototype is prototype of dessert<br>");
+            }
+			
+			// Creating new type (cheesecake)
+			var cheesecake = Object.create(dessert);
+			cheesecake.name = "cheesecake";
+			cheesecake.calories = 750;
+			cheesecake.displayDessert();
+			
+			document.writeln("<h2>Cheesecake Properties</h2>");			
+			var propertiesArray = getAllProperties(cheesecake);
+			for (var i = 0; i < propertiesArray.length; i++) {
+				document.writeln(propertiesArray[i] + "<br>");
+			}
+
+			if (dessert.isPrototypeOf(cheesecake)) {
+                document.writeln("dessert is prototype of cheesecake<br>");
+            }
+			if (Object.prototype.isPrototypeOf(cheesecake)) {
+                document.writeln("Object.prototype is prototype of cheesecake<br>");
+            }
+		}
+		
+		/* Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects */
+		function getAllProperties(src){     
+			var currObj, answer = [];
+	
+			/* Traversing the prototype chain */
+			currObj = src;
+			while (currObj !== null) {
+				answer = answer.concat(Object.getOwnPropertyNames(currObj));
+                currObj = Object.getPrototypeOf(currObj);
+            }
+			
+			return answer; 
+		}
+	</script>
+</body>
+</html>

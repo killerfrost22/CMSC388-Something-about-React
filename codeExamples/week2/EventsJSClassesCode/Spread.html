@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+		
+		let courses = new Map();
+		courses.set("cmsc122", 3);
+		courses.set("cmsc216", 4);
+		
+		for (let entry of courses) {
+			document.writeln(entry + "<br>");
+		}
+		
+		document.writeln("After converting to array<br>");
+		let arrayCourses = [...courses];
+		for (let i = 0; i < arrayCourses.length; i++) {
+			document.writeln("entry: " + i + "-->", arrayCourses[i] + "<br>");
+		}
+
+		
+	</script>
+</body>
+
+</html>

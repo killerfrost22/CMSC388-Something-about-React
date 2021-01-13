@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Example</title>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <script>
+            const a = [10, 20, 30];
+            a.length = 4;
+            a[3] = 50;
+            document.writeln(`a[3]=${a[3]}<br>`);
+            
+            /* using foreach to iterate over elements (ignores undefined elements) */
+            a.forEach(i => document.writeln(i));
+            delete a[0];
+            document.writeln("<br>After deleting<br>");
+            a.forEach(i=> document.writeln(i));
+            document.writeln(`<br>Length: ${a.length}<br>`);
+            
+            let removed = a.splice(0, 2); // first argument index, second number elements to remove
+                                          // if you don't provide second argument all elements are removed
+                                          // until the end of the array.
+            document.writeln(`array returned by splice: ${removed.join()}<br>`);
+            document.writeln(`original array after splice: ${a.join()}<br>`);
+            document.writeln(`original array length after splice: ${a.length}<br>`);
+            
+        </script>
+    </body>
+</html>

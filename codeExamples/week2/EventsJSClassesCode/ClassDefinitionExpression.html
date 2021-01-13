@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+				
+		main();
+		
+		function main() {
+			let Student = class St {
+				constructor(studentsName, age) {
+					this.studentsName = studentsName;
+					this.age = age;
+				}
+				toString() {
+					return this.studentsName + " " + this.age;
+				}
+				
+				getNameOfClass() {
+					return St.name;
+				}
+			}
+			
+            let s1 = new Student("Michael", 101);
+			let s2 = new Student("Rose", 345);
+			
+			document.writeln(s1 + "<br>");
+			document.writeln(s2 + "<br>");
+			document.writeln("Class name: " + s1.getNameOfClass() + "<br>");
+	    }
+	</script>
+</body>
+
+</html>

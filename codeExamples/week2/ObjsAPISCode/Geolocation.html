@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+		<meta charset="utf-8" /> 
+        <title>Geolocation</title>	
+    </head>	
+    <body>
+        <script> 
+           if (!navigator.geolocation) {
+                alert("Geolocation not supported in current browser");
+           } else {
+                navigator.geolocation.getCurrentPosition(success, failure);
+           }           
+           function success(position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                document.writeln("Position is: " + latitude + ", " + longitude);
+                document.writeln("<br />Copy above position in ");
+                document.writeln("<a href=\"http://maps.google.com/maps\">google maps</a>");
+                document.writeln(" to verify location ");
+           }
+           function failure(error) {
+                var errors = { 
+                    1: "Permission denied",
+                    2: "Position unavailable",
+                    3: "Request timeout"
+                };
+                alert("Error ocurred: " + errors[error.code]);
+           }
+        </script>        
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+		
+		class Student {
+			constructor(name, age) {
+				this.name = name;
+				this.age = age;
+			}
+			
+			toString() {
+				return this.name + " " + this.age;
+			}
+			
+			getName() {
+				return this.name;
+			}
+			
+			static getCollegeName() {
+				return "UMCP";
+			}
+		}
+		
+		class StudentAthlete extends Student {
+			constructor(name, age, sport) {
+				super(name, age);
+				this.sport = sport;
+			}
+			
+			toString() {
+				return super.toString() + " " + this.sport;
+			}
+		}
+		main();
+		
+		function main() {
+            let athlete1 = new StudentAthlete("Robert", 578, "Programming");
+		
+			document.writeln("Athlete: " + athlete1 + "<br>");
+			document.writeln("College: " + StudentAthlete.getCollegeName() + "<br>");
+        }
+	</script>
+</body>
+
+</html>

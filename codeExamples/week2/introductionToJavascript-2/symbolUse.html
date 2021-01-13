@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>JS Symbol Usage Example</title>
+</head>
+
+<body>
+
+	<script>
+		// "use strict";
+
+		const iterableObject = {
+
+			item1: 'value1',
+			item2: 'value2',
+
+			[Symbol.iterator]() {
+				this.current = 0;
+				return this;
+			},
+
+			next() {
+				if (this.current === 0) {
+					this.current++;
+					return {
+						done: false,
+						value: this.item1
+					};
+				} else if (this.current === 1) {
+					this.current++;
+					return {
+						done: false,
+						value: this.item2
+					};
+				} else {
+					return {
+						done: true
+					};
+				}
+			}
+		}
+
+		for (const p of iterableObject) {
+			console.log(p);
+		}
+
+		const iterableObject2 = {
+			data: ['hello', 'world', 'always'],
+
+			[Symbol.iterator]: function () {
+				// returns an iterator object
+				return {
+					current: 0,
+					data: this.data,
+
+					next() {
+						if (this.current < this.data.length) {
+							// console.log(this.current + " " + this.last);
+							// console.log(this.data);
+							return {
+								done: false,
+								value: this.data[this.current++]
+							};
+						} else {
+							return {
+								done: true
+							};
+						}
+					}
+				};
+			}
+		};
+
+		for (const p of iterableObject2) {
+			console.log(p);
+		}
+	</script>
+</body>
+
+</html>

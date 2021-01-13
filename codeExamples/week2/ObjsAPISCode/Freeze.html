@@ -1,0 +1,29 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+        "use strict";
+        main();
+        
+        function main() {
+            var school = new Object();
+            var info;
+            
+            school.name = "UMCP";
+            school.city = "College Park";
+            Object.freeze(school);
+            
+            /* NOT Allowed (Generates error) school.mascot = "terp"; */
+            /* NOT Allowed (Generates error) school.name = "UMD"; */
+            /* NOT Allowed (Generates error) delete school.city; */
+            
+            info = school.name + " " + school.city + " " + school.mascot;
+            document.writeln(info);
+        }
+	</script>
+</body>
+</html>

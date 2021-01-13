@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Prototypes</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        function MyNumberType(n) {
+            this.number = n;
+        }
+
+        // executed when primitive type is expected
+        MyNumberType.prototype.valueOf = function () {
+            return this.number;
+        };
+
+        // executed when string is expected
+        MyNumberType.prototype.toString = function () {
+            return "Number is " + this.number;
+        };
+
+        // ES6 - The Symbol.toPrimitive is a symbol that specifies a function
+        // valued property that is called to convert an object to a corresponding
+        // primitive value.
+        MyNumberType.prototype[Symbol.toPrimitive] = function (hint) {
+            // hint is one of "string", "number", "default"
+            console.log(hint);
+
+            if (hint === "string") {
+                return this.toString();
+            } else if (hint === "number") {
+                return this.valueOf();
+            } else { // default 
+                return this.valueOf();
+            }
+        }
+
+        const object1 = new MyNumberType(4);
+
+        console.log(object1.number); // 4
+        console.log(object1 + 3); // default
+        console.log(object1 + " string concatenated"); // default
+        console.log(`${object1}`); // string
+        alert(object1); // string
+    </script>
+</body>
+
+</html>

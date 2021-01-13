@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta charset="UTF-8" /> 
+		<title>JavaScript Program Template</title>	
+    </head>	
+    <body>
+		        
+        <div id="imageBox">
+            <img id="myImage" src="YOUR_PLAY_GAME_IMAGE_HERE.png" alt="Status" />
+        </div>
+		
+		<audio id="mySound">
+			<source src="YOUR_SOUND_HERE.mp3" type="audio/mpeg">
+		</audio>
+		
+        <script>
+			"use strict";
+	
+			
+			function displayPhoto(photoToDisplay) {
+				var imageElement = document.getElementById("myImage");
+				imageElement.setAttribute("src", photoToDisplay);
+			}
+			
+            var valueToGuess = Math.floor(2 * Math.random()) + 1;
+			var guess;
+			do {
+				guess = Number(prompt("Enter your guess"));
+				if (guess == valueToGuess) {
+					alert("Good Job!!!");
+					displayPhoto("YOUR_WINNER_IMAGE_HERE.jpg");
+					var myAudio = document.getElementById("mySound");
+					myAudio.play();
+				} else {
+					alert("Wrong guess");
+				}
+			} while(valueToGuess !== guess); 
+        </script>  
+		
+    </body>
+</html>

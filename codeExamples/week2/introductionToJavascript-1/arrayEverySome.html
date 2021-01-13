@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>JS Array every and some method Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		let atLeastOneOdd = [2, 6, 8, 1, 4].some(isOdd); 
+		let allOdd1 = [2, 6, 8, 1, 4].every(isOdd); 
+		let allOdd2 = [1, 3, 5, 9, 7].every(isOdd); 
+
+		// index and array are optional
+		function isOdd(elem, index, array){
+			return (elem % 2 === 1);
+		}
+
+		document.writeln("atLeastOneOdd: " + atLeastOneOdd + "<br>");
+		document.writeln("allOdd1: " + allOdd1 + "<br>");
+		document.writeln("allOdd2: " + allOdd2 + "<br>");
+	</script>
+</body>
+
+</html>

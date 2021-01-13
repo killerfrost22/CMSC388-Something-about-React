@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Example</title>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <form>
+            <input type="button" id="testCustomType" value="TestCustomType">
+            <input type="button" id="terpButton" value="TerpButton">
+            <input type="button" id="checkState" value="CheckState">
+        </form>
+        <div id="displayArea"></div>
+        
+        <script>
+            function displayMessage(message) {
+                document.getElementById("displayArea").innerHTML = message;
+            }
+            
+            function ButtonState() {
+                this.clicked = false;
+                /* Arrow functions do not have their own this reference; they remember */
+                /* this parameter at the point they are defined */
+                this.setClicked = () => { this.clicked = true; alert(`Button Selected: ${this.clicked}`);};
+                this.getClicked = () => { return this.clicked; };
+            }
+            
+            document.getElementById("testCustomType").addEventListener("click", function() {
+                const buttonState = new ButtonState();
+                let output = `Initial Button State: ${buttonState.getClicked()}<br>`;
+                buttonState.setClicked();
+                output += `After State Change: ${buttonState.getClicked()}<br>`;
+                displayMessage(output);
+            });
+            
+            const terpButtonState = new ButtonState();
+            /* Using above custom type to keep track of click state */
+            document.getElementById("terpButton").addEventListener("click", terpButtonState.setClicked);
+            
+            /* displaying state of above ButtonState */
+            document.getElementById("checkState").addEventListener("click", function() {
+                displayMessage("terpButtonState.getClicked(): " + terpButtonState.getClicked());
+            });
+        </script>
+    </body>
+</html>

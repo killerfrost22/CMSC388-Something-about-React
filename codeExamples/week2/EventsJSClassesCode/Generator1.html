@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		function *numGenerator() {
+			document.writeln("In generator<br>");
+			yield 10;
+			yield 20;
+			// return "Really Done";  /* What if you comment this out? *?
+        }
+		
+		let myGen = numGenerator();
+		document.writeln("After creating generator<br>");
+	
+		let entry = myGen.next();
+		document.writeln(entry.value + ", " + entry.done + "<br>");
+			
+		entry = myGen.next();
+		document.writeln(entry.value + ", " + entry.done + "<br>");
+		
+		entry = myGen.next();
+		document.writeln(entry.value + ", " + entry.done + "<br>");
+		
+	</script>
+</body>
+
+</html>

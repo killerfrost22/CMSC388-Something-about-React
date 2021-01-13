@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+        
+		/* constructor function */    
+        function Student(name, credits, courses) {
+            this.name = name;
+            this.credits = credits;
+            this.courses = courses;
+        }
+        
+        Student.prototype = {
+            constructor: Student,  
+            college: "UMCP",
+            info: function() {
+                document.writeln("Name: " + this.name);
+                document.writeln(", Credits: " + this.credits);
+                document.writeln(", Courses: " + this.courses + " ");
+                document.writeln(", College: " + this.college + "<br />");
+            }
+        };
+        
+        function GradStudent(name, credits, courses, advisor) {
+			/* Calls super class constructor */
+            Student.call(this, name, credits, courses);
+            
+            this.advisor = advisor;
+        }
+		
+	
+        GradStudent.prototype = new Student();
+		GradStudent.prototype.constructor = GradStudent;
+        GradStudent.prototype.getAdvisor = function() { return this.advisor; }
+        
+        
+        main();
+        function main() {
+            var gs1 = new GradStudent("Kelly", 15, [414, 420], "Dr. Smith");
+            gs1.info();
+            document.writeln(gs1.getAdvisor() + "<br>");
+			document.writeln("Name: " + gs1.name + "<br>");
+			document.writeln("College: " + gs1.college + "<br>");			
+        }
+        
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>JS Array map method Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		var numbers = [1, 4, 9];
+		var doubles = numbers.map(function (num) {
+			return num * 2;
+		});
+
+		debugger;
+
+		var triples = numbers.map( n => n * 3);
+
+		document.writeln(doubles + "<br>");
+		document.writeln(triples + "<br>");
+	</script>
+</body>
+
+</html>

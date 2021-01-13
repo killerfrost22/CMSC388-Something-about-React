@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Example</title>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <script>
+            const tas = [
+                            {name: "John", course: "cmsc131", type:"full", hours: 4},
+                            {name: "Mary", course: "math106", type: "half", hours: 10},
+                            {name: "Laura", course: "psyc101", type:"full", hours: 3},
+                            {name: "Kelly", course: "cmsc131", type:"full", hours: 5},
+                        ];
+            
+            /* forEach is a built-in array method; callback is called on each array element */
+            tas.forEach(i => document.writeln(i.name + "<br>"));
+         
+            /* mapping - map each item of an array to a new item of new array based on the callback */
+            /* We want to retrieve array of courses.   */
+            const allCourses = tas.map(ta => ta.course);
+            document.writeln(`TA courses: ${allCourses.join()}<br>`);
+            
+            /* Testing items in array */
+            /* We want to identify whether all elements of an array satisfy a condition */
+            /* every returns true if call back is true for all elements */
+            const allFullType = tas.every(ta => ta.type === "full");
+            document.writeln(`allFullType:${allFullType}<br>`);
+            
+            /* some will applies callback to each element until one is found to be true */
+            const anypsyc101TA = tas.some(ta => ta.course === "psyc101");
+            document.writeln(`anypsyc101TA:${anypsyc101TA}<br>`);
+            
+            /* finding first element in array that satifies condition; undefined returned if none found */
+            const tacmsc131 = tas.find(ta => { return ta.name === "John"; });
+            document.writeln(`Name: ${tacmsc131.name}, Type: ${tacmsc131.type}<br>`);
+            
+            /* filter returns array with items satisfying condition */
+            const allcmsc131Tas = tas.filter(ta => ta.course === "cmsc131");
+            document.writeln(`allcmsc131Tas:${allcmsc131Tas.map(ta => ta.name).join()}<br>`);
+            
+            /* indices */
+            const laurasIndex = tas.findIndex(ta => ta.name === "Laura");
+            document.writeln(`Laura\'s index ${laurasIndex}<br>`);
+                             
+            /* visiting every element in the collection and aggregating some value to generate */
+            /* a single value from the array */
+            
+            const values = [2, 3, 9];
+            const initialValue = 0;
+            /* reduce has two parameters: callback and initial value */
+            const valuesSum = values.reduce((accumulated, curr) => accumulated + curr, initialValue);
+            document.writeln(`valuesSum:${valuesSum}<br>`);
+            
+            const totalHours = tas.reduce((accumulated, curr) => accumulated + curr.hours, initialValue);
+            document.writeln(`totalHours:${totalHours}<br>`);
+        </script>
+    </body>
+</html>

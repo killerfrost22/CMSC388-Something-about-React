@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Square Root Table</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		var currValue = 0,
+			maximumValue;
+
+		/* Reading a value from the user and verifying is correct */
+		do {
+			maximumValue = Number(prompt("Enter a value"));
+			if (maximumValue < 0)
+				alert("Invalid value: " + maximumValue);
+		} while (maximumValue < 0);
+
+		/* Generating the table */
+		// document.writeln writes a string of text followed by a newline
+		// character to a document. Try also document.write(...)
+		document.writeln("<table border=\"10\">");
+		document.writeln("<caption><strong>Square Root Table</strong></caption>");
+		document.writeln("<tr><th>Number</th><th>Square Root</th></tr>");
+
+		while (currValue <= maximumValue) {
+			document.writeln("<tr><td>" + currValue + "</td><td>" +
+				Math.sqrt(currValue) + "</td></tr>");
+			currValue = currValue + 1;
+		}
+
+		document.writeln("</table>");
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta charset="UTF-8" />
+		<title>JavaScript Program Template</title>	
+	</head>
+
+    <body onload="main()">
+		<div>
+			<input type="file" id="fileElement">
+			<pre id="displayArea">
+			</pre>
+		</div>
+		
+        <script>
+			"use strict";
+			
+			function main() {
+				document.getElementById("fileElement").onchange = loadData;
+			}
+			
+			function loadData(e) {
+				var file = document.getElementById("fileElement").files[0];
+				var reader = new FileReader();
+				
+				reader.onload = function(event) {
+					var img = new Image();
+					
+					img.src = reader.result;
+					document.getElementById("displayArea").appendChild(img);
+				};
+				
+				reader.readAsDataURL(file);
+			}
+          
+        </script>
+    </body>
+</html>

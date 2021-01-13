@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Two-Dimensional Arrays</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        main();
+
+        function main() {
+            document.writeln("<h2>First Data Set</h2>");
+            var firstArray = [
+                [10, 20, 30],
+                [40, 50, 60],
+                [70, 80, 90]
+            ];
+            printArray(firstArray);
+
+            document.writeln("<h2>Second Data Set</h2>");
+            var secondArray = createArray(2, 3);
+            initializeArray(secondArray, 1);
+            printArray(secondArray);
+
+            document.writeln("<h2>Third Data Set (Ragged Array)</h2>");
+            var thirdArray = [
+                [100, 200, 300],
+                [400],
+                [700, 800],
+                [],
+                [500, 600, 900, 1000]
+            ];
+            printArray(thirdArray);
+        }
+
+        function createArray(maxRows, maxCols) {
+            var newArray = new Array(maxRows);
+
+            for (var row = 0; row < maxRows; row++) {
+                newArray[row] = new Array(maxCols);
+            }
+
+            return newArray;
+        }
+
+        function initializeArray(data, initialValue) {
+            var row, col;
+            for (row = 0; row < data.length; row++) {
+                for (col = 0; col < data[row].length; col++) {
+                    data[row][col] = initialValue;
+                    initialValue++;
+                }
+            }
+        }
+
+        function printArray(data) {
+            var row, col;
+            for (row = 0; row < data.length; row++) {
+                for (col = 0; col < data[row].length; col++) {
+                    document.writeln(data[row][col] + "&nbsp;&nbsp;");
+                }
+                document.writeln("<br>"); // why do we need this?
+            }
+        }
+    </script>
+</body>
+
+</html>

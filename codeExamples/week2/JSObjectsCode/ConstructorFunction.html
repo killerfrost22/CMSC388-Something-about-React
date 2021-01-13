@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<html>
+<body>
+	<script>
+		main();
+		
+		function main() {
+			var comp1 = new Computer("PC", 30);
+			var comp2 = new Computer("Mac", 50);
+			document.writeln("Comp1 model: " + comp1.model + "<br>");
+			document.writeln("Comp1 memory: " + comp1.getMemory() + "<br>");
+			comp1.setMemory(100);
+			document.writeln("Comp1 memory: " + comp1.memory + "<br>");
+			comp1.monitor = "hd";  /* Does not affect comp2 */
+		}
+		
+		/* Constructor function */
+		function Computer(modelIn, memoryIn) {
+            this.model = modelIn;
+			this.memory = memoryIn;
+			this.getMemory = function() { return this.memory; }; /* we need this.memory */
+			this.setMemory = function(memoryValue) { this.memory = memoryValue; }
+        }
+		
+	</script>
+</body>
+</html>

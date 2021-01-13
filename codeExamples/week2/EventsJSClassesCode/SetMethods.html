@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Example</title>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <script>
+            const tas106 = ["John", "Mary", "Laura", "Kelly", "Bob"];
+            const tas131 = ["Mary", "Rose", "Bob"];
+            
+            /* Creating set out of array */
+            const set106 = new Set(tas106);
+            for (let elem of set106) {
+                document.writeln(elem);
+            }
+            const set131 = new Set(tas131);
+            
+            /* Set union using spread operator to create new array */
+            const allTAs = new Set([...set106, ...set131]);
+            document.writeln("<br>Union (allTAs)<br>");
+            for (let elem of allTAs) {
+                document.writeln(elem + "<br>");
+            }
+    
+            /* Intersection */
+            const inBothCourses = new Set([...set131].filter(ta131 => set106.has(ta131)));
+            document.writeln("Intersection: " + [...inBothCourses].join() + "<br>");
+            
+            /* Difference */
+            document.writeln("106tas that are not 131tas<br>");
+            const difference = new Set([...set106].filter(ta106 => !set131.has(ta106)));
+            document.writeln("Difference: " + [...difference].join() + "<br>");
+        </script>
+    </body>
+</html>

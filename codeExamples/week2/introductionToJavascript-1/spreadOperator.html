@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>JS Spread Operator Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		function process(start, end, delta, message) {
+			document.writeln(message + "<br>");
+			for (let i = start; i <= end; i += delta) {
+				document.writeln(i + " ");
+			}
+			document.writeln("<br>");
+		}
+
+		process(1, 10, 2, "First");
+		process(...[1, 10, 2, "Second", "Test"]);
+		/* will not work without spread operator */
+
+		process(1, ...[10, 2], "Third"); /* will not work without spread operator */
+
+		let part1 = ["C", "Java"];
+		let part2 = ["Python"];
+		let combined = ["Pascal", ...part1, ...part2];
+		document.writeln(combined.join() + "<br>");
+
+		var arr = [1, 2, 3];
+		var arr2 = [...arr]; // like arr.slice()
+		arr2.push(4);
+		document.writeln(arr2 + "<br>");
+
+		let numArray1 = [1, -21, 3, 4];
+		let numArray2 = [9, 3, -8, 10, 7];
+
+		document.writeln(Math.max(...numArray1, ...numArray2) + "<br>");
+
+		let string = "CMSC389N";
+		let charArr = [...string];
+		document.writeln(charArr + "<br>");
+		document.writeln(typeof charArr[0] + "<br>");
+
+		let newArr = Array.from(string).map(x => x.toLowerCase());
+		document.writeln(newArr + "<br>");
+
+		document.writeln("Converting elements of iterable into array<br>");
+		let mySet = new Set();
+		mySet.add("Mike").add("Rose");
+		let myArray = [...mySet];
+		document.writeln(myArray.join());
+	</script>
+</body>
+
+</html>

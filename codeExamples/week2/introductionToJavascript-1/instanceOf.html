@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>charAt Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		main();
+
+		function printArray(scores) {
+			var i;
+
+			for (i = 0; i < scores.length; i++) {
+				document.writeln("Value " + scores[i] + "<br>");
+			}
+		}
+
+		function main() {
+			var myInfo = {
+				name: "John",
+				id: 10
+			};
+
+			var scores = [10, 30];
+			printArray(scores);
+
+			document.writeln("myInfo instance of Object: " + (myInfo instanceof Object) +
+				"<br>");
+			document.writeln("scores instance of Object: " + (scores instanceof Object) +
+				"<br>");
+			document.writeln("scores instance of Array: " + (scores instanceof Array) + "<br>");
+			document.writeln("printArray instance of Function: " + (
+				printArray instanceof Function) + "<br><br>");
+
+			document.writeln("typeof myInfo: " + typeof myInfo + "<br>");
+			document.writeln("typeof scores: " + typeof scores + "<br>");
+			document.writeln("typeof printArray: " + typeof printArray + "<br><br>");
+
+			document.writeln("Array.isArray(scores): " + Array.isArray(scores) + "<br>");
+		}
+	</script>
+</body>
+
+</html>

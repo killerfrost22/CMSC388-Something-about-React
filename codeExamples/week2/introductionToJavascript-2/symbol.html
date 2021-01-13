@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		let sym = Symbol("firstSymbol");
+
+		document.writeln(String(sym) +
+			"<br>"); /* implicit convertion does not work */
+		document.writeln(sym.toString() +
+			"<br>"); /* implicit convertion does not work */
+
+		let sym2 = Symbol("firstSymbol");
+		if (sym === sym2) {
+			document.writeln("Symbols the same<br>");
+		} else {
+			document.writeln("Symbols are different<br>");
+		}
+		document.writeln("typeof sym: " + typeof sym + "<br>");
+
+		/* symbol as property key */
+		const KEY_TO_USE = Symbol('a key to use');
+		const computedPropKey = "prop" + 0;
+		let myObj = {
+			name: "John",
+			[computedPropKey]: 3000,
+			[KEY_TO_USE]: 789, // a computed prop key 
+			['home' + 'address']: "somewhere in maryland", // a computed prop key
+			[300 + 80 + 9]: "a computed property key!" // a computed prop key
+		};
+		document.writeln("myObj[KEY_TO_USE]: " + myObj[KEY_TO_USE] + "<br>");
+		document.writeln("myObj[computedPropKey]: " + myObj[computedPropKey] + "<br>");
+		document.writeln(Object.getOwnPropertyNames(myObj) + "<br>");
+		document.writeln(String(Object.getOwnPropertySymbols(myObj)[0]) + "<br>");
+
+		// note that [KEY_TO_USE] is ignored in the for-in loop
+		document.writeln("<br>for..in<br>");
+		let text = "";
+		for (let prop in myObj) {
+			text += "'" + myObj[prop] + "' ";
+		}
+		document.writeln("<br>" + text + "<br>");
+
+		const MESSAGE = Symbol();
+		let testudo = {
+			[MESSAGE]: function () {
+				return 'Fear the turtle';
+			}
+		};
+		document.writeln("<br>Message is " + testudo[MESSAGE]() + "<br>");
+
+		const COLOR_RED = Symbol("Red");
+		const COLOR_BLUE = Symbol("Blue");
+		document.writeln("Boolean(COLOR_RED): " + Boolean(COLOR_RED) + "<br>");
+	</script>
+</body>
+
+</html>

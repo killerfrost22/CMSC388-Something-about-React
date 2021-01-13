@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Functions as Data</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		main();
+
+		function main() {
+			var numberOfValues = Number(prompt("Enter number of values to print"));
+			var wantHTML = window.confirm(
+				"Press OK for HTML format and Cancel for text");
+			var printingFunction;
+
+			if (wantHTML) {
+				//processValues(numberOfValues, htmlFormat);
+				printingFunction = htmlFormat;
+			} else {
+				//processValues(numberOfValues, textFormat);
+				printingFunction = textFormat;
+			}
+
+			processValues(numberOfValues, printingFunction);
+		}
+
+		function textFormat(data) {
+			document.writeln(data);
+		}
+
+		function htmlFormat(data) {
+			document.writeln("<em><strong>" + data + ", </strong></em>");
+		}
+
+		function processValues(maximum, printOption) {
+			var curr = 1;
+			while (curr <= maximum) {
+				printOption(curr);
+				curr++;
+			}
+		}
+	</script>
+</body>
+
+</html>

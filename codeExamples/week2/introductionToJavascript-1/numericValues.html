@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Numeric Values</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		var info = "NaN: " + Number.NaN + "<br>";
+		info += "Infinity: " + Infinity + "<br>";
+		info += "MAX_VALUE: " + Number.MAX_VALUE + "<br>";
+		info += "MIN_VALUE: " + Number.MIN_VALUE + "<br>";
+		info += "POSITIVE_INFINITY: " + Number.POSITIVE_INFINITY + "<br>";
+		info += "NEGATIVE_INFINITY: " + Number.NEGATIVE_INFINITY + "<br>";
+		info += "isFinite(100): " + isFinite(100) + "<br>";
+		info += "isFinite(null): " + isFinite(null) + "<br>";
+		info += "Number.isFinite(null): " + Number.isFinite(null) + "<br>";
+
+		document.writeln(info);
+
+		document.writeln("Result of 1/0: " + 1 / 0 + "<br>");
+		document.writeln("Result of 1/Infinity: " + 1 / Infinity + "<br>");
+		document.writeln("Result of Infinity/0: " + Infinity / 0 + "<br>");
+		document.writeln("Result of Infinity/Infinity: " + Infinity / Infinity +
+			"<br>");
+		document.writeln("Square root of negative value: " + Math.sqrt(-10) +
+			"<br>");
+		document.writeln("Square root of a string: " + Math.sqrt("Rose") + "<br>");
+
+		document.writeln("Floating-point values are approximations<br>");
+		var x = 1 / 7 + 4 / 7 + 2 / 7;
+		var y = (1 + 4 + 2) / 7;
+		document.writeln("Value of x: " + x + "<br>");
+		document.writeln("Value of y: " + y + "<br>");
+		if (x === y) {
+			document.writeln("Same value<br>");
+		} else {
+			document.writeln("Different values<br>");
+		}
+	</script>
+</body>
+
+</html>

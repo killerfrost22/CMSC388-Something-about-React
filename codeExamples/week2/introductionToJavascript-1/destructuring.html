@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>JS Destructuring Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		main();
+
+		function main() {
+			/* destructuring arrays */
+			let names = ["John", "Mary", "Paul"];
+			let [first, second] = names;
+			document.writeln("First: " + first + ", " + "Second: " + second + "<br>");
+
+			/* destructuring objects */
+			let app = {
+				name: "mapApp",
+				developed: 1986
+			};
+			/* You must use the same property name; try name2 instead of name */
+			let {
+				name,
+				developed
+			} = app; /* Notice using { } */
+			document.writeln("Name: " + name + ", " + "Developed: " + developed + "<br>");
+
+			/* swap */
+			let a = 100,
+				b = 200;
+			[b, a] = [a, b];
+			document.writeln(a + ", " + b + "<br>");
+
+			let [x, y, ...rest] = [10, 20, 30, 40, 50];
+			document.writeln(x + ", " + y + ", [" + rest + "]");
+
+		}
+	</script>
+</body>
+
+</html>

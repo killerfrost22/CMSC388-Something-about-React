@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Adding Properties</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        main();
+
+        function main() {
+            var sale = new Object();
+
+            /* Reading the items, number of items */
+            var wantAnotherItem, item, numberOfItems;
+
+            do {
+                item = prompt("Enter name of item you want to buy.");
+                numberOfItems = Number(prompt("Enter number of items you want to buy."));
+                sale[item] = numberOfItems;
+                wantAnotherItem = window.confirm("Do you want to buy another item?");
+            } while (wantAnotherItem);
+
+            /* Report about bought items */
+            var report = "Items bought\n";
+
+            /* note: 
+            The for...in statement iterates over all non-Symbol, enumerable properties of
+            an object */
+            for (var propertyName in sale) {
+                report += propertyName + "-->" + sale[propertyName] + "\n";
+            }
+            alert(report);
+        }
+    </script>
+</body>
+
+</html>

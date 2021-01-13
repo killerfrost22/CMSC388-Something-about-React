@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+		
+		class Student {
+			constructor(name, age) {
+				this.name = name;
+				this.age = age;
+			}
+			
+			toString() {
+				return this.name + " " + this.age;
+			}
+			
+			getName() {
+				return this.name;
+			}
+			
+			static getCollegeName() {
+				return "UMCP";
+			}
+		}
+		
+		main();
+		
+		function main() {
+            let s1 = new Student("Mary", 20);
+			let s2 = new Student("Peter", 30);
+			
+			document.writeln(s1 + "<br>");
+			document.writeln(s2 + "<br>");
+			
+			document.writeln("College Name: " + Student.getCollegeName() + "<br>");
+			document.writeln("Student's name: " + s1.getName() + "<br>");
+			s1.name = "CHANGED NAME";
+			document.writeln("Student's name: " + s1.getName() + "<br>");
+			
+			/* Student("Kyle", 40); */ /* Check console when commented out */
+        }
+	</script>
+</body>
+
+</html>

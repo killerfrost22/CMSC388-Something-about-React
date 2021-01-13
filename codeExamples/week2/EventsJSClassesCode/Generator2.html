@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		function *oddNumGenerator(max) {
+			for (let i = 1; i <= max; i += 2) {
+				yield i;
+			}
+        }
+		
+		let myGen = oddNumGenerator(10);
+	
+		let entry = myGen.next();
+		document.writeln(entry.value + ", " + entry.done + "<br>");
+			
+		entry = myGen.next();
+		document.writeln(entry.value + ", " + entry.done + "<br>");
+		
+		entry = myGen.next();
+		document.writeln(entry.value + ", " + entry.done + "<br>");
+		
+	</script>
+</body>
+
+</html>

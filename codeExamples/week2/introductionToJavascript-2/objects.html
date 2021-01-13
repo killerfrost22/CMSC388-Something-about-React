@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>JS Object Example</title>
+</head>
+
+<body>
+	<script>
+		main();
+
+		function main() {
+			/* Alternatives for creating an empty object */
+			var emptyObject1 = new Object();
+			var emptyObject2 = new Object(undefined);
+			var emptyObject3 = new Object(null);
+
+			/* Boolean Object alternative */
+			var booleanObject1 = new Object(true);
+			var booleanObject2 = new Boolean(true);
+			
+			/* Using Object constructor for person object */
+			var person1 = new Object();
+			/* Adding properties */
+
+			person1.name = "John";
+			person1.age = 45;
+			person1.school = umcpSchool;
+
+			printPerson(person1);
+
+			/* Using object initializer/literal notation */
+			var person2 = {
+				name: "Mary",
+				age: 30,
+				school: umcpSchool,
+				bestFriend: person1
+			};
+
+			printPerson(person2);
+
+			var exam = {
+				semester: "fall",
+				"difficulty-level": 10,
+				3: "midterm3",
+				"": "empty string"
+			};
+
+			// NOT VALID alert("First form: " + exam.difficulty-level);
+			document.writeln("difficulty-level: " + exam["difficulty-level"] + "<br>");
+			document.writeln("exam[3]: " + exam[3] + "<br>");
+			document.writeln("'': " +exam[''] + "<br>");
+		}
+
+		function printPerson(personParam) {
+			document.writeln("Name: " + personParam.name + ", ");
+			document.writeln("Age: " + personParam.age + ", ");
+			if (personParam.bestFriend != undefined) {
+				document.writeln("Best Friend: " + personParam.bestFriend.name + ", ");
+			}
+			personParam.school();
+		}
+
+		function umcpSchool() {
+			document.writeln("University of MD College Park" + "<br>");
+		}
+	</script>
+</body>
+
+</html>

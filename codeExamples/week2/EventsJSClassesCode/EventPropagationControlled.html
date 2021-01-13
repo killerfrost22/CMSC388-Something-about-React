@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Example</title>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <div id="OuterElement">
+                This text is part of the
+                outer element.<br><br><br>
+            <div id="InnerElement">
+                &nbsp&nbsp;This text is part of the inner element.<br><br><br>
+                <div id="WayInnerElement">
+                &nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;This text is part of the way inner element :)<br><br><br>
+                </div>
+            </div>
+        </div>
+        <script>
+            /* We can control which event-handling order we want by using a boolean value in addEventLister. */
+            /* If the value is false (or not present) bubbling will be used; otherwise capturing */
+            document.getElementById("OuterElement").addEventListener("click", () => alert("OuterElement"), true);
+            document.getElementById("InnerElement").addEventListener("click", () => alert("InnerElement"), true);
+            document.getElementById("WayInnerElement").addEventListener("click", () => alert("WayInnerElement"), true);
+        </script>
+    </body>
+</html>

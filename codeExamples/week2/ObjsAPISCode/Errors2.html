@@ -1,0 +1,47 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+        main();
+        
+        function main() {
+            try {
+                var option = prompt("Enter 1, 2, 3 for error case");
+
+                switch (option) {
+                    case "1":
+                        var x = new Array(-4);
+                        break;
+                    case "2":
+                        var x = y;
+                        break;
+                    case "3":
+                        var k = 234;
+                        var w = k.charAt(0);
+                        break;                    
+                }
+            } catch(error) {
+				var messageDes;
+				
+                if (error instanceof RangeError) {
+                    messageDes = "Range: ";
+                } else if (error instanceof ReferenceError) {
+                    messageDes = "Reference: ";
+                } else if (error instanceof TypeError) {
+                    messageDes = "Type: "
+                } else {
+                    messageDes = "Other: ";
+                }
+                
+                alert(messageDes + error.message);
+            }
+        }
+        
+	</script>
+</body>
+</html>

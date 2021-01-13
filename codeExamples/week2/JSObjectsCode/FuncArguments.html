@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+        main();
+        
+        function processData(x, y) {
+            document.writeln(arguments.length);
+            document.writeln(arguments[0]);
+            document.writeln(arguments[1] + "<hr>");
+            
+            if (x !== 0) {
+                arguments.callee(--x, --y);  /* recursive call */
+            }
+        }
+        function main() {
+            processData(3, 4);
+        }
+	</script>
+</body>
+</html>

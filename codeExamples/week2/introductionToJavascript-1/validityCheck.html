@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Validity Check</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        /* calling main */
+        main();
+
+        function main() {
+            var value, invalid;
+
+            do {
+                value = prompt("Enter a number");
+                if (value !== null) {
+                    value = value.trim();
+                    let k = isNaN(value);
+                    invalid = (value === "" || isNaN(value));
+
+
+
+                    if (invalid) {
+                        alert("You need to enter a number");
+                    }
+                }
+            } while (value !== null && invalid);
+
+            if (value === null) {
+                alert("No value was provided")
+            } else {
+                alert("Value provided: " + value);
+            }
+        }
+    </script>
+</body>
+
+</html>

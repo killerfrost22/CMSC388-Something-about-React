@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Example</title>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <div id="OuterElement">
+                This text is part of the
+                outer element.<br><br><br>
+            <div id="InnerElement">
+                &nbsp&nbsp;This text is part of the inner element.<br><br><br>
+                <div id="WayInnerElement">
+                &nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;This text is part of the way inner element :)<br><br><br>
+                </div>
+            </div>
+        </div>
+        <script>
+            /* In some event's model the listener is executed starting at the targeted element */
+            /* and bubbling up the DOM tree.  This is refered to as event bubbling. In other models */
+            /* event handling starts with the top element trickling down the target element.  This is referred to
+            /* as event capturing. W3 Consortium approach relies onhandling an event
+            /* in two phases: capturing phase (event first trickles down); bubbling phase (after target
+            /* element has been reached during the capturing phase the event bubbles up). */
+            
+            document.getElementById("OuterElement").addEventListener("click", () => alert("OuterElement"));
+            document.getElementById("InnerElement").addEventListener("click", () => alert("InnerElement"));
+            document.getElementById("WayInnerElement").addEventListener("click", () => alert("WayInnerElement"));
+        </script>
+    </body>
+</html>

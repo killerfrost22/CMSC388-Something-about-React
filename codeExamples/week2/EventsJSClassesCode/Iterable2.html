@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		class SummerCourse {
+			constructor(name, credits) {
+				this.name = name;
+				this.credits = credits;
+				this.headTA = "Mary";
+				this.grader = "Peter";
+			}
+			
+			toString() {
+				return `${this.name}, ${this.credits}`;
+			}
+			
+			* [Symbol.iterator]() {
+				yield this.headTA;
+				yield this.grader;
+			}
+			
+        }
+
+		let course = new SummerCourse("psyc200", 3);
+		document.writeln(course + "<br>");
+		
+		for (let ta of course) {
+			document.writeln(ta + "<br>");
+		}
+	</script>
+</body>
+
+</html>

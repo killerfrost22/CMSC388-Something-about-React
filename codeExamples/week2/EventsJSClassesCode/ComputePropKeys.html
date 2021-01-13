@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+		 let part1 = 'camp', part2 = 'us';
+		 let preFunc = "getD", postFunc = "ata";
+				
+		 let student1 = {
+			id: 1,
+			[part1 + part2] : "UMCP",
+			[preFunc + postFunc]() { return [part1 + part2]; }
+		 };
+		 
+		 document.writeln("id: " + student1.id + ", campus: " + student1.campus + "<br>");
+		 document.writeln("Function: " + student1.getData() + "<br>");
+	</script>
+</body>
+</html>

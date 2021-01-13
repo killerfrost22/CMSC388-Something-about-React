@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>JS Truthy Falsy Example</title>
+	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js">
+	</script>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		isTruthy(false);
+		isTruthy(0);
+		isTruthy("");
+		isTruthy(null);
+		isTruthy(undefined);
+		isTruthy(NaN);
+		isTruthy("0");
+		isTruthy("false");
+		isTruthy({});
+		isTruthy([]);
+		isTruthy(Math.PI);
+		isTruthy("Hello everyone");
+
+		let date1 = new Date('2019-09-12T12:30:00');
+		let date2 = new Date('September 12, 2019 12:30:00')
+		isTruthy(date1);
+		isTruthy(date2);
+		isTruthy(date1 === date2 || date1 == date2);
+
+		// use of Lodash function lib. isEqual performs deep comparison
+		isTruthy(_.isEqual(date1, date2));
+
+		var now = new Date();
+		isTruthy(now);
+
+		function isTruthy(v) {
+			(v) ? console.log(v + " is Truthy!"): console.log(v + " is Falsy!");
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Random Values</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        main();
+
+        function main() {
+            var maximum, menu = "Enter 1 for random values [0, 1)\n";
+            menu += "Enter 2 for random values between [0, max)\n";
+            menu += "Enter 3 for integer Random values between [0, max]";
+
+            var choice = Number(prompt(menu));
+            var numberOfValues = Number(prompt(
+                "Enter number of values to generate"));
+            if (choice === 1) {
+                simpleRandomCall(numberOfValues);
+            } else if (choice === 2) {
+                maximum = Number(prompt("Enter maximum value"));
+                randomValues(maximum, numberOfValues);
+            } else if (choice === 3) {
+                maximum = Number(prompt("Enter maximum value"));
+                randomIntegerValues(maximum, numberOfValues);
+            } else {
+                alert("Invalid choice.");
+            }
+        }
+
+        function simpleRandomCall(numberOfValues) {
+            document.writeln("<h1>Values between 0 and less than 1</h1>");
+            document.writeln("<p>");
+
+            var i = 0;
+            while (i < numberOfValues) {
+                document.writeln(Math.random() + "<br>");
+                i++;
+            }
+            document.writeln("</p>");
+        }
+
+        function randomValues(max, numberOfValues) {
+            document.writeln("<h1>Random values between 0 and less than " +
+                max +
+                " </h1>");
+            document.writeln("<p>");
+
+            var i = 0;
+            while (i < numberOfValues) {
+                document.writeln((max * Math.random()) + "<br>");
+                i++;
+            }
+            document.writeln("</p>");
+        }
+
+        function randomIntegerValues(max, numberOfCalls) {
+            document.writeln("<h1>Random integer values between 0 and " + max +
+                " </h1>");
+            document.writeln("<p>");
+
+            var i = 0;
+            while (i < numberOfCalls) {
+                document.writeln(Math.floor((max + 1) * Math.random()) +
+                "<br>");
+                i++;
+            }
+            document.writeln("</p>");
+        }
+    </script>
+</body>
+
+</html>

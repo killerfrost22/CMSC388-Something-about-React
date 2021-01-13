@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta charset="utf-8" /> 
+        <title>Mouse Drawing</title>
+    </head>
+
+    <body>
+        <canvas id="canvas" width="400" height="300"></canvas>
+        
+        <script>
+			"use strict";
+			
+            var color = "red";
+            var sideLength = 5;
+		
+        	main();
+		
+        	function main() {
+                document.onmousemove = processMousePosition;
+                document.onkeypress = changeColor;
+        		document.writeln("<p>");
+        		document.writeln("<strong>Move the mouse in the above area.");
+        		document.writeln("Press enter to change to erase mode;");
+        		document.writeln("Press enter again to change to drawing mode</strong>");
+        		document.writeln("</p>");
+        	}
+		
+        	function processMousePosition(evt) {
+                draw(evt.pageX, evt.pageY);
+            }
+    
+            function changeColor() {
+            	if (color === "red") {
+            		color = "white";
+            		sideLength = 500;
+            	} else {
+            		color = "red";
+            		sideLength = 5;
+            	}
+            }
+		
+    		function draw(xPos, yPos) {
+    			var context = document.getElementById("canvas").getContext("2d");
+				
+    			context.fillStyle = color;
+    			context.fillRect(xPos, yPos, sideLength, sideLength);
+    		}
+        </script>	
+    </body>
+</html>

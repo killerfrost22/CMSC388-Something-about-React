@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>JS Map Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		function printMap(map) {
+			document.writeln("Map size: " + map.size + "<br>");
+			document.writeln("Map Entries<ul>");
+			for (let entry of map) {
+				document.writeln(entry + "<br>");
+			}
+			document.writeln("</ul>");
+		}
+
+		let map = new Map();
+		map.set("Mike", 88);
+		map.set("Rose", 90);
+		map.set("Kelly", 100);
+		printMap(map);
+
+		document.writeln("<br>Value for Rose: " + map.get("Rose") + "<br>");
+		document.writeln("Value for NotInMap: " + map.get("NotInMap") + "<br>");
+		document.writeln("map.has(\"Mike\"): " + map.has("Mike") + "<br>");
+
+		let firstDeletion = map.delete("Rose");
+		document.writeln("<br>First deletion (Rose): " + firstDeletion + "<br>");
+		let secondDeletion = map.delete("NotInMap");
+		document.writeln("Second deletion: " + secondDeletion + "<br>");
+		printMap(map);
+
+		document.writeln("<br>Using keys()<br>");
+		for (let key of map.keys()) {
+			document.writeln(key + "<br>");
+		}
+
+		document.writeln("<br>Using values()<br>");
+		for (let value of map.values()) {
+			document.writeln(value + "<br>");
+		}
+
+		document.writeln("<br>Using map.entries<br>");
+		for (let entry of map.entries()) {
+			document.writeln(entry[0] + ", " + entry[1] + "<br>");
+		}
+
+		document.writeln("<br>Using map.entries(2)<br>");
+		for (let [key, value] of map.entries()) {
+			document.writeln(key + ", " + value + "<br>");
+		}
+
+		document.writeln("<br>Another Iteration<br>");
+		for (let [key, value] of map) {
+			document.writeln(key + ", " + value + "<br>");
+		}
+	</script>
+</body>
+
+</html>

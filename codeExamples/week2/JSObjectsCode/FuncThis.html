@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+        window.singer = "Psy";
+        var obj = new Object();
+        obj.singer = "NP";
+        
+        main();
+        
+        function main() {
+            singerInfo();
+            document.writeln("Using object<br />");
+            
+            var obj = new Object();
+            obj.singer = "Coolio";
+            obj.singerInfo = singerInfo;
+            obj.singerInfo();
+        }
+        
+        function singerInfo() {
+            document.writeln(this.singer + "<br />");
+        }
+        
+	</script>
+</body>
+</html>

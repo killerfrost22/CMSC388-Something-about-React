@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+        window.terpConstant = 100;
+        
+        main();
+        
+        function main() {
+            document.writeln("product(1, 2): " + product(1, 2) + "<br>");
+            document.writeln("applyArguments(3, 4): " + applyArguments(3, 4) + "<br>");
+            document.writeln("applyArray(2, 3):" + applyArray(2, 3) + "<br>");
+            document.writeln("applyAndObject(3, 5): " + applyAndObject(3, 5) + "<br>");
+            document.writeln("callExample(6, 5): " + callExample(6, 5) + "<br>");
+			
+			document.writeln("bindExample(): ");
+			bindExample();
+        }
+        
+        function product(x, y) {
+            return x * y * this.terpConstant;
+        }
+        
+        function applyArguments(x, y) {
+            return product.apply(this, arguments);
+        }
+        
+        function applyArray(x, y) {
+            return product.apply(this, [x, y]);
+        }
+        
+        function applyAndObject(x, y) {
+            var obj = new Object();
+            obj.terpConstant = 1000;
+            return product.apply(obj, [x, y]);
+        }
+        
+        function callExample(x, y) {
+            return product.call(this, x, y);
+        }
+        
+        function bindExample() {
+            var obj = new Object();
+            obj.terpConstant = 9;
+            
+            var productObj = product.bind(obj);
+            document.writeln(productObj(2, 5));
+        }
+	</script>
+</body>
+</html>

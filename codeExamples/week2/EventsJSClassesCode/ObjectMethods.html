@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+		
+		let personsInfo = { name: "Bob", age:24 };
+		let personsCourses = { course1: "ENGL101", course2: "PSYC100"};
+		let combined = Object.assign(personsInfo, personsCourses);
+		
+		/* Notice use of for in */
+		for (let key in combined) {
+            document.writeln(key + ": " + combined[key] + "<br>");
+        }
+		
+		let student1 = { name: "Tom" };
+		let student2 = { name: "Mary" };
+		let student3 = { name: "Tom" };
+		
+		document.writeln("Object.is(NaN, NaN): " + Object.is(NaN, NaN) + "<br>");
+		document.writeln("Object.is(student1, student2): " + Object.is(student1, student2) + "<br>");
+		document.writeln("Object.is(student1, student3): " + Object.is(student1, student3) + "<br>");
+		document.writeln("Object.is(student1, student1): " + Object.is(student1, student1) + "<br>");
+
+	</script>
+</body>
+
+</html>

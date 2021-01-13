@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Sorting</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		main();
+
+		function printArray(data) {
+			var i;
+
+			for (i = 0; i < data.length; i++) {
+				document.writeln(data[i] + " ");
+			}
+			document.writeln("<br>");
+		}
+
+		function main() {
+			var names = ["Rose", "Bob", "Tom", "Albert"];
+
+			document.writeln("Original<br>");
+			document.writeln(names.join() + "<br>");
+			document.writeln("Sorted<br>");
+			names.sort();
+			document.writeln(names.join("*") + "<br>");
+
+			var scores = [30, 2, 4, 5];
+			document.writeln("Original<br>");
+			document.writeln(scores.join() + "<br>");
+			document.writeln("Sorted<br>");
+			scores.sort(); // Unicode code point order does generates unexpected result
+			document.writeln(scores.join(",") + "<br><br>");
+
+			document.writeln("Using comparison function<br>");
+			scores.sort(function (x, y) {
+				return x - y;
+			});
+			document.writeln(scores.join(",") + "<br><br>");
+
+			document.writeln("Sorted names<br>");
+			names.sort(strCompare);
+			document.writeln(names.join(",") + "<br>");
+
+			var students = [{
+					name: "John",
+					id: 3
+				},
+				{
+					name: "Peter",
+					id: 2
+				},
+				{
+					name: "Mary",
+					id: 10
+				}
+			];
+
+			document.writeln("Sorting array of objects<br>");
+			students.sort(function (x, y) {
+				return strCompare(x.name, y.name);
+			});
+			for (let i = 0; i < students.length; i++) {
+				document.writeln(students[i].name + "<br>");
+			}
+		}
+
+		function strCompare(x, y) {
+			if (x < y) {
+				return -1;
+			} else if (x > y) {
+				return 1;
+			} else {
+				return 0;
+			}
+		}
+	</script>
+</body>
+
+</html>

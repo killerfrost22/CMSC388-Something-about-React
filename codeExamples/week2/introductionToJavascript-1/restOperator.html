@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>JS Rest Operator Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		main();
+
+		function main() {
+			partyInfo("FirstParty", "John", "Alice", "Peter");
+			partyInfo("SecondParty", "Mike", "Sandra");
+		}
+
+		function partyInfo(name, director, ...others) {
+			document.writeln(name + " " + director + "<br>");
+			for (let i = 0; i < others.length; i++) {
+				document.writeln(others[i]);
+			}
+			document.writeln("<br>");
+		}
+	</script>
+</body>
+
+</html>

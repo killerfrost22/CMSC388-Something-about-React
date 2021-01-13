@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Null</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        main();
+
+        function main() {
+            var name = window.prompt(
+                "Enter your name (select cancel to see result)");
+            if (name === null) {
+                window.confirm("Data input operation cancelled.");
+            } else {
+                window.confirm("Welcome: " + name);
+            }
+        }
+    </script>
+</body>
+
+</html>

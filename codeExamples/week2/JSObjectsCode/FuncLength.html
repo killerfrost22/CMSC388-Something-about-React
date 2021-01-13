@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+        main();
+        
+        function main() {
+            document.writeln("generateResults.length: " + generateResults.length + "<br>");
+            document.writeln("moreResults.length: " + moreResults.length + "<br>");
+			document.writeln("generateResults.toString(): " + generateResults.toString() + "<br>");
+			document.writeln("generateResults.valueOf(): " + generateResults.valueOf() + "<br>");
+			
+        }
+        
+        function generateResults(x) {
+            document.writeln(x);
+        }
+        
+        function moreResults(x, y) {
+            document.writeln(x, y);
+        }
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+	"use strict";
+    
+	var person = {
+		_firstname: "John",
+		_age: 35,
+		get getname() { return this._firstname;},
+		get age() { return this._age;},
+		set age(age) { return this._age = age;}
+	};
+	
+	document.writeln(person.getname);
+	document.writeln(person.age);
+	person.age = 40; /* To update we assign the value */
+	document.writeln(person.age); /* retrieving the value */
+	person._age = 100;
+	document.writeln("<br>Still modifying property: " + person.age)
+	
+	</script>
+</body>
+</html>

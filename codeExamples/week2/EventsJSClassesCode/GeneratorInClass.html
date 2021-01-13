@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		class SummerCourse {
+			constructor(name, credits) {
+				this.name = name;
+				this.credits = credits;
+				this.headTA = "Mary";
+				this.grader = "Peter";
+			}
+			
+			toString() {
+				return `${this.name}, ${this.credits}`;
+			}
+			
+			* taGenerator() {
+				document.writeln("Beginning of generator<br>");
+				yield this.headTA;
+				yield this.grader;
+			}
+			
+        }
+
+		let course = new SummerCourse("cmsc111", 4);
+		document.writeln(course + "<br>");
+		
+		let generator = course.taGenerator();
+		let ta = generator.next();
+		document.writeln(ta.value + ", " + ta.done + "<br>");
+		
+		ta = generator.next();
+		document.writeln(ta.value + ", " + ta.done + "<br>");
+		
+		ta = generator.next();
+		document.writeln(ta.value + ", " + ta.done + "<br>");
+
+	</script>
+</body>
+
+</html>

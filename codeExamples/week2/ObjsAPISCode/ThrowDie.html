@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta charset="UTF-8" /> 
+		<title>JavaScript Program Template</title>	
+    </head>	
+    <body onload="main()">
+		        
+        <span id="imageBox">
+        </span>
+		  <span id="imageBox2">
+        </span>
+		<input type="button" id="myButton" value="Roll">
+	
+        <script>
+			"use strict";
+	
+			var animation;
+			var times = 5;
+			var curr = 0;
+
+			function main() {
+				var myButton = document.getElementById("myButton");
+				myButton.onclick = roll;
+			}
+			
+			function roll() {
+				curr = 0;
+				animation = setInterval("throwDies()", 1000);
+			}
+			
+			function displayPhoto(photoToDisplay) {
+				var imageElement = document.getElementById("myImage");
+				imageElement.setAttribute("src", photoToDisplay);
+			}
+		
+		    function throwDies() {
+				var dieNumber =  Math.floor(6 * Math.random());
+				var value = 9856 + dieNumber;
+				
+				document.getElementById("imageBox").innerHTML = "&#" + value;
+				
+				dieNumber =  Math.floor(6 * Math.random());
+				value = 9856 + dieNumber;
+				document.getElementById("imageBox2").innerHTML = "&#" + value;
+		
+				curr++;
+				if (curr == times) {
+					clearInterval(animation);
+				}
+			}
+			
+        </script>  
+		
+    </body>
+</html>

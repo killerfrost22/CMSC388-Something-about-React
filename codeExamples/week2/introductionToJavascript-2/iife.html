@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>JS IIFE Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+
+		// this variable will be attached to windows global object
+		var myStar =  "Albireo";
+
+		(function () {
+			var hiddenStar = "HiddenStar";
+		})();
+		
+		// if you uncomment the line below, JS will throw an error:
+		// Uncaught ReferenceError: hiddenStar is not defined
+		// hiddenStar;
+
+	</script>
+</body>
+
+</html>

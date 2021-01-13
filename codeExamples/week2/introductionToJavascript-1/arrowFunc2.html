@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		// strict mode is disabled intentionally
+		// "use strict";
+
+		// source:
+		// https://blog.bitsrc.io/a-practical-guide-to-es6-arrow-functions-c16975100cf5
+
+		const details = {
+			name: 'Arfat',
+			getName: function () {
+				return this.name;
+			}
+		}
+		details.getName(); // 'Arfat'
+
+		// However, in JavaScript, the callback function (and every traditional function)
+		// gets its own value of this. This value is different from the details object.
+		// Hence, the getDetails methods has a value of this that is bound to details
+		// object, and the callback passed to the forEach method has a value of this that
+		// is not details object. When the callback is searching for the this value, it
+		// invariably gets its own value first instead of the this value of getFriends
+		// method. In a sense, the this value of getFriends is shadowed by the callback’s
+		// own value.
+		const details2 = {
+			name: 'Arfat',
+			friends: ['Bob', 'Alex'],
+			getFriends: function () {
+				this.friends.forEach(function (friend) {
+					console.log(this.name + " is friends with " + friend);
+				});
+			}
+		}
+		details2.getFriends();
+
+		// One solution is to this problem is to use the that = this pattern. Let’s see
+		// the code
+		const details3 = {
+			name: 'Arfat',
+			friends: ['Bob', 'Alex'],
+			getFriends: function () {
+				const that = this;
+				this.friends.forEach(function (friend) {
+					console.log(that.name + " is friends with " + friend);
+				});
+			}
+		}
+		details3.getFriends();
+
+		// manual rebinding of this
+		const details4 = {
+			name: 'Arfat',
+			friends: ['Bob', 'Alex'],
+			getFriends: function () {
+				this.friends.forEach(function (friend) {
+					console.log(this.name + " is friends with " + friend);
+				}, this);
+			}
+		}
+		details4.getFriends();
+
+		// Arrow functions bind this lexically. In other words, Arrow functions always
+		// have a value of this keyword taken from the parent scope. That is, they don’t
+		// have any intrinsic, own this value.
+		const details5 = {
+			name: 'Arfat',
+			friends: ['Bob', 'Alex'],
+			getFriends: function () {
+				this.friends.forEach(friend => {
+					console.log(this.name + " is friends with " + friend);
+				});
+			}
+		}
+		details5.getFriends();
+	</script>
+</body>
+
+</html>

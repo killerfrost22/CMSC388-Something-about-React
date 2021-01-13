@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Prototypes</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        function MyNumberType(n) {
+            this.number = n;
+        }
+
+        function Student() {}
+        let s = new Student();
+        console.log(Object.prototype.isPrototypeOf(s)); // true
+
+        let anonymous = new function () {}
+        console.log(Object.prototype.isPrototypeOf(anonymous)); // true
+
+        function StudentAthlete() {}
+        StudentAthlete.prototype = Object.create(Student.prototype);
+        let sa = new StudentAthlete();
+
+        console.log(Object.prototype.isPrototypeOf(sa)); // true
+        console.log(Student.prototype.isPrototypeOf(sa)); // true
+        console.log(StudentAthlete.prototype.isPrototypeOf(sa)); // true
+        console.log(MyNumberType.prototype.isPrototypeOf(sa)); // false
+
+        let arr1 = new Array(2);
+        console.log(arr1.hasOwnProperty('length'));
+
+
+        debugger;
+    </script>
+</body>
+
+</html>

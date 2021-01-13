@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+		"use strict";
+		
+		let message = "Fear the turtle";
+		for (let char of message) {
+			document.writeln(char + "<br>");
+		}
+		
+		// Accessing the iterator
+		document.writeln("Accessing iterator<br>");
+		let strIterator = message[Symbol.iterator]();
+		document.writeln(strIterator.next().value);
+	</script>
+</body>
+
+</html>
