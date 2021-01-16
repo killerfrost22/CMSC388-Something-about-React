@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Shape Shed - Examples - CSS + DOM = A Beautiful Couple
+	</title>
+
+	<style type="text/css" media="screen">
+		@import "domExample.css";
+	</style>
+
+</head>
+<div class="house">
+
+	<body id="front-door">
+
+		<div id="kitchen">
+			<div id="fridge">
+				<p>Extra Pulp OJ</p>
+			</div>
+			<div id="freezer">
+				<p>Ice Cream</p>
+			</div>
+		</div>
+
+		<div id="lounge">
+			<div id="sofa">
+				<p>Newspaper</p>
+			</div>
+			<div id="chair">
+				<p>Cushion</p>
+			</div>
+		</div>
+
+		<div id="bedroom">
+			<div id="bed">
+				<p>Duvet</p>
+			</div>
+			<div id="lamp">
+				<p>Lightbulb</p>
+			</div>
+		</div>
+
+		<div id="bathroom">
+			<div id="shower">
+				<p>Shower Gel</p>
+			</div>
+			<div id="sink">
+				<p>Soap</p>
+			</div>
+		</div>
+
+</div>
+<div class="house">
+
+	<body id="front-door">
+
+		<div id="kitchen">
+			<div id="fridge">
+				<p>Extra Pulp OJ</p>
+			</div>
+			<div id="freezer">
+				<p>Ice Cream</p>
+			</div>
+		</div>
+
+		<div id="lounge">
+			<div id="sofa">
+				<p>Newspaper</p>
+			</div>
+			<div id="chair">
+				<p>Cushion</p>
+			</div>
+		</div>
+
+		<div id="bedroom">
+			<div id="bed">
+				<p>Duvet</p>
+			</div>
+			<div id="lamp">
+				<p>Lightbulb</p>
+			</div>
+		</div>
+
+		<div id="bathroom">
+			<div id="shower">
+				<p>Shower Gel</p>
+			</div>
+			<div id="sink">
+				<p>Soap</p>
+			</div>
+		</div>
+
+</div>
+<script>
+	//get the first house class
+	let x = document.getElementsByClassName('house')[0];
+	x.innerHTML += "<p>My house is red<p>";
+	//change its inner html...what happens?
+</script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head> 
+    <meta charset="utf-8" />
+    <title>Promises Start</title>	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.4.0/rxjs.umd.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+      //use catch for the bad link
+       const p1 = fetch('https://api.githusk.djfb.kasjdbb.com/users/egonzal5');
+       const result = p1.then(data => {
+         return data.json()
+       }).then(r => {
+         console.log(r);
+       }).catch(err => console.log(err));
+      console.log(result);
+      
+    </script>
+  </body>
+</html>

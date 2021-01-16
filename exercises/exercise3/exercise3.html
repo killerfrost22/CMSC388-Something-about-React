@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>
+      Exercise3
+    </title>
+  </head>
+  <body>
+    <!--Buttons corresponding to each function below-->
+    <button type="button" onclick="actionMovies()">Action Movies</button>
+    <button type="button" onclick="tomHanks()">Tom Hanks</button>
+    <button type="button" onclick="soo2017()">2017 Movies</button>
+    <button type="button" onclick="movieCount()">Movie Count</button>
+
+    <h2>Movie Lists</h2>
+    <hr />
+    <ul class="list"></ul>
+    <script>
+      const url =
+        "https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies.json";
+
+      //DO NOT MODIFY fetch!
+      const movies = [];
+      fetch(url)
+        .then(resp => resp.json())
+        .then(data => movies.push(...data));
+
+      //Your task is to complete these four functions, according to the specifications
+      //Action Movies - Display a list of action movies that were released in 2018. Output: <movie_title> (<year>)
+      function actionMovies() {}
+
+      //Tom Hanks - Display a list of all comedy movies that Tom Hanks acted in. Output: <movie_title> (<year>)
+      function tomHanks() {}
+
+      //Soo 2017 - Display a list of all movies that came out in 2017 sorted alphabetically by movie title. Output: <movie_title> (<year>)
+      function soo2017() {}
+
+      //Movie Count - Display the number of movies that were released each year. Output: <number_of_movies>
+      function movieCount() {}
+
+      //Function that converts arrays into seperate HTML list elements. (Hint: Use this!)
+      function convertToHTML(query) {
+        const results = query.map(movie => `<li>${movie}</li>`).join("");
+        return results;
+      }
+
+      //A javascript reference to the unordered list with classname list. (Hint: Use this!)
+      const movieHTML = document.querySelector(".list");
+    </script>
+  </body>
+</html>

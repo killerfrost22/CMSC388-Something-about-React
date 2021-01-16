@@ -1,0 +1,21 @@
+
+/*-----------------------------------------------------------------------------
+Example credit to:
+author:    george ornbo
+website:   http://www.shapeshed.com
+-----------------------------------------------------------------------------*/
+
+
+
+body
+	{
+	font: 76%/150%  "Lucida Grande", "Lucida Sans", "Trebuchet MS", Tahoma, Verdana, sans-serif;
+	color: #333366;
+	}
+
+/* This demonstrates accessing and manipulating using the DOM (Document Object Model) */
+/*Color the ice cream red!*/
+	
+#kitchen {
+	color: red;
+}

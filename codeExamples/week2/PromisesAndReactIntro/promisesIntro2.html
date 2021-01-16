@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head> 
+    <meta charset="utf-8" />
+    <title>Promises Intro 2</title>	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.4.0/rxjs.umd.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+      const p1 = fetch('https://api.github.com/users/egonzal5');
+      p1.then(result => result.json())
+        .then(data => console.log(data))
+        .catch(err => {
+          console.log('Oh nooooo@@@');
+          console.error(err);
+        })
+
+      async function getInfo() {
+        console.log('inside async');
+        const p1 = fetch('').then(result => {
+          return result.json();
+        });
+        const data = await p1;
+        console.log(data.login);
+      }
+      
+      getInfo();
+
+      try {
+        getInfo()
+      } catch(err) {
+        console.log('I don\'t exist!!!!!');
+        console.error(err);
+      }
+    </script>
+  </body>
+</html>

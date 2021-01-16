@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head> 
+    <meta charset="utf-8" />
+    <title>Multiple Promises</title>	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.4.0/rxjs.umd.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+
+      async function makeMulipleRequests() {
+        const p1 = await fetch('https://api.github.com/users/egonzal5');
+        console.log(p1);
+        const p2 = await p1;
+        console.log(p2);
+        //});
+        //const p2 = fetch('https://api.github.com/users/egonzal5').then(data => {
+          //return data.json();
+        //});
+
+        // const p1 = fetch('https://api.github.com/users/egonzal5');
+        // const p2 = fetch('https://api.github.com/users/arasevic');
+
+        // const results = await Promise.all([p1,p2]);
+
+        // const data = results.map(r => r.json());
+        
+        // console.log(results);
+        // console.log(`Datais ${data}`);
+
+        // const EliasandAndrej = await Promise.all(data);
+        // const [Elias, Andrej] = await Promise.all(data);
+        // console.log(EliasandAndrej);
+        // console.log(Elias, Andrej);
+
+      }
+
+      async function getData(names) {
+        const promises = names.map(name => {
+          return fetch(`https://api.github.com/users/${name}`)
+                  .then(r => r.json())
+        });
+
+        console.log(promises);
+
+        const repos = await Promise.all(promises); //wait for all promises to finish
+        console.log(repos);
+      }
+
+      makeMulipleRequests();
+
+      // try {
+      //   getData(['egonzal5', 'arasevic']);
+      // } catch (err) {
+      //   console.log("Whaaaaat");
+      //   console.error(err);
+      // }
+    </script>
+  </body>
+</html>
