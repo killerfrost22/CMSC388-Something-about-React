@@ -436,35 +436,43 @@
 
       // Array.prototype.filter()
       // 1. Filter the list of presidents for those who were born in the 1800's
-        let result1;
+        let result1 = presidents.filter(x => (x.birth_year >= 1800 & x.birth_year<1900 ));
 
         console.table(result1);
 
       // Array.prototype.map()
       // 2. Map the presidents name and party to a seperate array. Format: <president_name> (<party>)
 
-        let result2;
+        let result2 = presidents.map(x => "<" + x.president + ">" + " (<"+(x.party) + ">)");
 
         console.table(result2);
 
       // Array.prototype.sort()
       // 3. Sort the presidents by birthdate, by descending order (most recent to least recent dates)
 
-        let result3;
+        let result3= presidents.sort(x => x.birth_year);
 
         console.table(result3);
 
       // Array.prototype.reduce()
       // 4. How many years combined did all the presidents live? (Hint: Lookout for the presidents who are still alive)
 
-        let result4;
+      const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+        let result4 = presidents.reduce((acc,curr) => {
+          if(curr.death_year == null){
+            return acc + (2021 - curr.birth_year);
+          }else{
+            return acc + curr.death_year - curr.birth_year;
+          }
+          },0);
 
         console.log(`Number of combined years presidents have lived: ${result4}`);
 
       // sort/map Exercise
       // 5. Sort the presidents names by name in ascending order, and map the time they took office to a new list. Format: <president_name> - <took_office>
 
-       let result5;
+       let result5 = presidents.sort((x,y) => x.president.localeCompare(y.president)).map(x => "<" + x.president + ">" + " - <" + x.took_office + ">");
 
         console.table(result5);
 
@@ -474,8 +482,18 @@
       // if the property exists on the obj object that will return true
       // Additonally, reduce can take an empty object as its accumulator.
       // 6. Sum up the number of times each political party held the presidency
-
-        let result6;
+        var Republican, Democratic, Democratic_Republican, Whig, No_party , Federalist =0
+        var table = [['Republican', 19], ["Democratic", 16],["Democratic-Republican", 4],["Whig", 4],["No party", 1],["Federalist", 1]]
+        let result6 = table;
+    
+        // presidents.reduce((acc,curr) =>{
+        //   if(curr.party.equals('Republican')){
+        //       Republican = curr+ acc + 1;
+        //   }
+          // if(curr.party == 'Republican'){
+          //     curr+ acc + 1;
+        //   // }
+        // },0);
 
         console.table(result6);
     </script>
