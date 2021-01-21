@@ -25,17 +25,45 @@
         .then(data => movies.push(...data));
 
       //Your task is to complete these four functions, according to the specifications
-      //Action Movies - Display a list of action movies that were released in 2018. Output: <movie_title> (<year>)
-      function actionMovies() {}
+      //Action Movies - Display a list of action movies that were released in 2018. 
+      // Output: <movie_title> (<year>)
+      function actionMovies() {
+        thelist = movies.filter(movies => movies.year === 2018).map(movie => {return movie.title + "(" + movie.year+")";});
+        thelist = convertToHTML(thelist);
+        document.getElementsByClassName("list")[0].innerHTML=thelist;
+      }
 
       //Tom Hanks - Display a list of all comedy movies that Tom Hanks acted in. Output: <movie_title> (<year>)
-      function tomHanks() {}
+      function tomHanks() {
+        thelist = movies.filter(movies =>  movies.genres.includes("Comedy") ? movies.cast.includes('Tom Hanks') ? movies : null : null);
+
+        console.table(thelist);
+        document.getElementById("x").innerHTML=convertToHTML(thelist.map(m => `${m.title} (${m.year})`));     
+      }
 
       //Soo 2017 - Display a list of all movies that came out in 2017 sorted alphabetically by movie title. Output: <movie_title> (<year>)
-      function soo2017() {}
+      function soo2017() {
+        filter = movies.filter(movies => movies.year==2017).sort(function(a,b) {
+          if ( a.title.toUpperCase() < b.title.toUpperCase() ){
+            return -1;
+          }
+          else if ( b.title.toUpperCase() < a.title.toUpperCase()){
+            return 1;
+          }else return 0;
+        });
+      console.table(filter);
+      document.getElementById("x").innerHTML=convertToHTML(filter.map(m => `${m.title} (${m.year})`));
+      }
 
       //Movie Count - Display the number of movies that were released each year. Output: <number_of_movies>
-      function movieCount() {}
+      function movieCount() {
+        moviesyear = movies.reduce(function(total,movies){
+          total[movies.year] = (total[movies.year] || 0) +1;
+          return total;},{});
+          moviesyear = Object.keys(moviesyear).map((key) => [moviesyear[key]]);
+          moviesyear = convertToHTML(moviesyear);
+        document.getElementsByClassName("list")[0].innerHTML=moviesyear;
+      }
 
       //Function that converts arrays into seperate HTML list elements. (Hint: Use this!)
       function convertToHTML(query) {
@@ -46,5 +74,8 @@
       //A javascript reference to the unordered list with classname list. (Hint: Use this!)
       const movieHTML = document.querySelector(".list");
     </script>
+    <x id ="x">
+
+    </x>
   </body>
 </html>
