@@ -20,31 +20,30 @@ The possibilities are endless.
 
 ### This is my temp archive of the course
 
-It is about React & js & html
+
 
 ```
-
+It is about React & js & html
 ```
 
 Yep. That's it. You should see the following output:
 
 ```
-
+exercises and codefolder
 ```
 
 ### Deploying
 
-install vscode & 
+
 
 ```
-
+install vscode & 
 ```
 
 It's that simple. And when it comes time to scale the application, all you have to do is:
 
 
 ```
-
 npm build & npm start
 ```
 
