@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Introduction",
+    "slug": "introduction",
+    "content": "This is my first post. WordPress says edit or delete these kind of posts. I say just keep it."
+  },
+  {
+    "title": "React Final Lecture",
+    "slug": "react-final-lecture",
+    "content": "Today will be our last lecture on React. From here you can go on to learn Vue, Angular 9 or anything else out there that captures your attention."
+  }
+]
